@@ -22,15 +22,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         val imgView = findViewById<ImageView>(R.id.imageView)
-
         imgView.setOnClickListener {
             if (imgView.id == R.id.imageView) {
                 Toast.makeText(this, "CLAPS", Toast.LENGTH_SHORT).show()
             }
         }
-
         seekBar = findViewById(R.id.sbClapping)
         handler = Handler(Looper.getMainLooper())
            val playButton = findViewById<FloatingActionButton>(R.id.fabPlay)
@@ -79,10 +76,8 @@ class MainActivity : AppCompatActivity() {
         val duration = mediaPlayer!!.duration/1000
         val  dueTime = duration-playTime
         tvDue.text = "$dueTime sec"
-
         handler.postDelayed(runnable, 1000)
     }
         handler.postDelayed(runnable,1000)
-
     }
 }
